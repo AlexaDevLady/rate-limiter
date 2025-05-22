@@ -11,6 +11,12 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 app.use(helmet());
 app.use(cors());
+app.use(cors({
+  origin: 'https://kiipsich.vercel.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: false, // Set to true if you ever need cookies/auth headers
+}));
 app.use(express.json());
 
 // === In-memory store to detect persistent locations ===
