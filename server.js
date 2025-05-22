@@ -49,7 +49,9 @@ function locationBlocker(req, res, next) {
   const ip = req.ip;
   const { latitude, longitude } = req.body.location || {};
 
-  if (!latitude || !longitude) return res.status(400).json({ error: 'Missing location data' });
+  if (!latitude || !longitude) {
+    return next();
+  }
 
   const key = `${latitude}:${longitude}`;
   const currentTime = Date.now();
