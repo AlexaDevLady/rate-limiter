@@ -3,6 +3,7 @@ const axios = require('axios');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -76,8 +77,8 @@ Google Maps: https://www.google.com/maps?q=${data.location?.latitude},${data.loc
 `;
 
     // Replace with your actual bot token and chat ID
-   const botToken = '7724144349:AAEQ74TSbpbUqRtRjUciNbwdGANwYaja57k';
-      const chatId = 1613277499;
+   const botToken = process.env.TELEGRAM_BOT_TOKEN;
+const chatId = process.env.TELEGRAM_CHAT_ID;
 
     const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
