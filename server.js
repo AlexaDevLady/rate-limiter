@@ -8,14 +8,28 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const allowedOrigins = [
+  'https://kiipsich.vercel.app',
+  'https://wrightman.vercel.app',
+   // add all your trusted frontends here
+];
+
 // Middlewares
 app.use(helmet());
 app.use(cors());
 app.use(cors({
-  origin: 'https://kiipsich.vercel.app',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g. mobile apps, curl)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
-  credentials: false, // Set to true if you ever need cookies/auth headers
+  credentials: false
 }));
 app.use(express.json());
 
