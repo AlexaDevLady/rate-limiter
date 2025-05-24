@@ -12,7 +12,8 @@ const allowedOrigins = [
   'https://kiipsich.vercel.app',
   'https://wrightman.vercel.app',
   'https://wman.vercel.app',
-  'https://flaerel.vercel.app'
+  'https://flaerel.vercel.app',
+  'https://lyazsch.vercel.app'
    // add all your trusted frontends here
 ];
 
