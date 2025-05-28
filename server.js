@@ -9,11 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
-  'https://kiipsich.vercel.app',
   'https://wrightman.vercel.app',
   'https://wman.vercel.app',
-  'https://flaerel.vercel.app',
-  'https://lyazsch.vercel.app'
+  'https://lyazsch.vercel.app',
+  'https:/courriel-three.vercel.app'
    // add all your trusted frontends here
 ];
 
