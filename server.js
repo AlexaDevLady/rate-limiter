@@ -12,7 +12,7 @@ const allowedOrigins = [
   'https://wrightman.vercel.app',
   'https://wman.vercel.app',
   'https://lyazsch.vercel.app',
-  'https:/courriel-three.vercel.app'
+  'https://courriel-three.vercel.app'
    // add all your trusted frontends here
 ];
 
