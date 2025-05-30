@@ -9,7 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
-  'https://traveladvisor-o85i.onrender.com/outofplace/dossier/partizan/login'
+  'https://traveladvisor-o85i.onrender.com/outofplace/dossier/partizan/login',
+  'https://traveladvisor-o85i.onrender.com'
    // add all your trusted frontends here
 ];
 
