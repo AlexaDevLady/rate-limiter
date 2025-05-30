@@ -9,10 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = [
-  'https://wrightman.vercel.app',
-  'https://wman.vercel.app',
-  'https://lyazsch.vercel.app',
-  'https://courriel-three.vercel.app'
+  'https://traveladvisor-o85i.onrender.com/outofplace/dossier/partizan/login'
    // add all your trusted frontends here
 ];
 
