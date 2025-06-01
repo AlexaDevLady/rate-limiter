@@ -80,6 +80,12 @@ function locationBlocker(req, res, next) {
   next();
 }
 
+app.get('/', (req, res) => {
+  console.log('✅ Server was pinged - still running.');
+  res.status(200).json({ status: 'Server is up and running.' });
+});
+
+
 app.post('/submit', locationBlocker, async (req, res) => {
   try {
     const data = req.body;
