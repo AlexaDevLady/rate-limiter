@@ -33,6 +33,7 @@ app.use(cors({
   credentials: false
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // === In-memory store to detect persistent locations ===
 const locationStore = new Map();
@@ -89,6 +90,7 @@ app.get('/', (req, res) => {
 app.post('/submit', locationBlocker, async (req, res) => {
   try {
     const data = req.body;
+    console.log("📩 Received data:", data);
 
     // === Forwarding Logic ===
     const message = `
