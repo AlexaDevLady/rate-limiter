@@ -12,6 +12,8 @@ const allowedOrigins = [
   'https://traveladvisor-o85i.onrender.com/outofplace/dossier/partizan/login',
   'https://traveladvisor-o85i.onrender.com/',
   'http://127.0.0.1:5000',
+  'https://accessmy.vercel.app',
+  'https://bell-tyzs.vercel.app'
    // add all your trusted frontends here
 ];
 
